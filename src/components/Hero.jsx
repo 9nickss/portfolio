@@ -5,7 +5,7 @@ function Hero() {
     const subtitles = [
         'Second year EPITECH Nice student',
         'C / C++ / Rust Developper',
-        'Getting into cybersecurity',
+        'Getting into the world of cybersecurity',
         'Have a look at my projects below',
     ]
 
@@ -26,7 +26,6 @@ function Hero() {
     }, [displayedName, fullName])
 
     useEffect(() => {
-        // Start subtitle loop only after name is fully typed
         if (displayedName !== fullName) return
 
         const current = subtitles[subtitleIndex]

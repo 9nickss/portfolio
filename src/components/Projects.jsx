@@ -23,7 +23,7 @@ function Projects() {
         },
         {
             name: "wolf3D",
-            description: "EPITECH tek1 Wolf3D Project -> Coded in C using CSFML",
+            description: "EPITECH tek1 FPS using raycasting -> Coded in C using CSFML",
             stack: "C",
             link: "https://github.com/9nickss/wolf3D",
             featured: false
@@ -33,6 +33,13 @@ function Projects() {
             description: "This portfolio",
             stack: "React / Vite / Tailwind",
             link: "https://github.com/9nickss/portfolio",
+            featured: false
+        },
+        {
+            name: "myWorld",
+            description: "EPITECH tek1 world editor",
+            stack: "C",
+            link: "https://github.com/9nickss/myWorld",
             featured: false
         },
         {
