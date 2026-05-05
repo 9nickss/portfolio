@@ -5,13 +5,14 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
+import Projects from './components/Projects.jsx'
 
 function App() {
   return (
-    <main className="bg-black min-h-screen text-white pt-20">
+    <main className="bg-black min-h-screen text-white">
       <Navbar />
-      <div className='flex items-center justify-center min-h-screen'></div>
       <Hero />
+      <Projects />
     </main>
   )
 }
