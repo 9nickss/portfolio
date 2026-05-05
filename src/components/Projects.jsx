@@ -50,7 +50,7 @@ function Projects() {
     const under = other.slice(3)
 
     return (
-        <section className="min-h-screen px-16 py-20">
+        <section id="projects" className="min-h-screen px-16 py-20">
             <h2 className="text-5xl font-bold mb-12">Projects</h2>
             <div className="grid grid-cols-2 gap-4 mb-4">
 
@@ -65,7 +65,7 @@ function Projects() {
                         <span className="text-xs border border-neutral-700 px-3 py-1 rounded-full text-gray-400">
                             {featured.stack}
                         </span>
-                        <a href={featured.link} className="text-xs text-gray-400 hover:text-white">
+                        <a href={featured.link} target="_blank" className="text-xs text-gray-400 hover:text-white">
                             GitHub →
                         </a>
                     </div>
@@ -81,7 +81,7 @@ function Projects() {
                                 <span className="text-xs border border-neutral-700 px-3 py-1 rounded-full text-gray-400">
                                     {projet.stack}
                                 </span>
-                                <a href={projet.link} className="text-xs text-gray-400 hover:text-white">
+                                <a href={projet.link} target="_blank" className="text-xs text-gray-400 hover:text-white">
                                     GitHub →
                                 </a>
                             </div>
@@ -99,7 +99,7 @@ function Projects() {
                                 <span className="text-xs border border-neutral-700 px-3 py-1 rounded-full text-gray-400">
                                     {projet.stack}
                                 </span>
-                                <a href={projet.link} className="text-xs text-gray-400 hover:text-white">
+                                <a href={projet.link} target="_blank" className="text-xs text-gray-400 hover:text-white">
                                     GitHub →
                                 </a>
                             </div>    
