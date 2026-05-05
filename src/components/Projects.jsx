@@ -55,7 +55,7 @@ function Projects() {
             <div className="grid grid-cols-2 gap-4 mb-4">
 
                 {/*featured*/}
-                <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 flex flex-col justify-end min-h-64">
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col justify-end min-h-64">
                     <span className="text-xs bg-white text-black px-3 py-1 rounded-full w-fit mb-auto">
                         Featured
                     </span>
@@ -74,7 +74,7 @@ function Projects() {
                 {/* other */}
                 <div className="flex flex-col gap-4">
                     {column.map((projet) => (
-                        <div key={projet.name} className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
+                        <div key={projet.name} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                             <h3 className="text-lg font-bold text-white">{projet.name}</h3>
                             <p className="text-gray-500 text-sm mt-2">{projet.description}</p>
                             <div className="flex items-center gap-3 mt-4">
@@ -92,7 +92,7 @@ function Projects() {
 
             <div className="grid grid-cols-3 gap-4">
                 {under.map((projet) => (
-                    <div key={projet.name} className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
+                    <div key={projet.name} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                             <h3 className="text-lg font-bold text-white">{projet.name}</h3>
                             <p className="text-gray-500 text-sm mt-2">{projet.description}</p>
                             <div className="flex items-center gap-3 mt-4">
