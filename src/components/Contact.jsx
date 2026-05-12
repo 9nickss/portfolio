@@ -6,6 +6,7 @@ import emailjs from '@emailjs/browser'
 const EMAILJS_SERVICE_ID  = 'service_jx8q4vm'
 const EMAILJS_TEMPLATE_ID = 'template_kktcphg'
 const EMAILJS_PUBLIC_KEY  = 'QVorwY3DIPk-MwPW0'
+const COOLDOWN_MS = 60_000
 
 function SocialLink({ href, icon: Icon, label, subtitle }) {
     return (
@@ -68,6 +69,16 @@ function ContactForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+
+        const lastSent = localStorage.getItem('lastSent')
+        const now = Date.now()
+
+        if (lastSent && now - lastSent < COOLDOWN_MS) {
+            const secondsLeft = Math.ceil((COOLDOWN_MS - (now - lastSent)) / 1000)
+            setStatus(`wait:${secondsLeft}`)
+            return
+        }
+
         setStatus('sending')
         try {
             await emailjs.sendForm(
@@ -76,6 +87,7 @@ function ContactForm() {
                 formRef.current,
                 EMAILJS_PUBLIC_KEY
             )
+            localStorage.setItem('lastSent', now)
             setStatus('sent')
         } catch (err) {
             console.error(err)
@@ -83,7 +95,9 @@ function ContactForm() {
         }
     }
 
-    const buttonLabel = {
+    const buttonLabel =  status.startsWith('wait:')
+    ? `Please wait ${status.split(':')[1]}s` : 
+    {
         idle:    'Send',
         sending: 'Sending...',
         sent:    'Sent ✓',
