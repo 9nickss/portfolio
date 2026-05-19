@@ -9,11 +9,45 @@ const subtitles = [
 ]
 
 export default function Hero() {
+    const [displayedName, setDisplayedName] = useState('')
+    const [displayedLastName, setDisplayedLastName] = useState('')
     const [displayed, setDisplayed] = useState('')
     const [index, setIndex] = useState(0)
     const [deleting, setDeleting] = useState(false)
+    const [nameComplete, setNameComplete] = useState(false)
+    const [lastNameComplete, setLastNameComplete] = useState(false)
+
+    const firstName = 'Yannick'
+    const lastName = 'Kahl'
 
     useEffect(() => {
+        // First, type out first name
+        if (!nameComplete) {
+            if (displayedName === firstName) {
+                setNameComplete(true)
+                return
+            }
+            
+            const id = setTimeout(() => {
+                setDisplayedName(firstName.slice(0, displayedName.length + 1))
+            }, 120)
+            return () => clearTimeout(id)
+        }
+
+        // Then, type out last name
+        if (!lastNameComplete) {
+            if (displayedLastName === lastName) {
+                setLastNameComplete(true)
+                return
+            }
+            
+            const id = setTimeout(() => {
+                setDisplayedLastName(lastName.slice(0, displayedLastName.length + 1))
+            }, 120)
+            return () => clearTimeout(id)
+        }
+
+        // Finally, type out the subtitles
         const current = subtitles[index]
         const isFull = displayed === current
         const isEmpty = displayed === ''
@@ -35,7 +69,7 @@ export default function Hero() {
             }, deleting ? 45 : 70)
         }
         return () => clearTimeout(id)
-    }, [displayed, index, deleting])
+    }, [displayed, index, deleting, displayedName, nameComplete, displayedLastName, lastNameComplete])
 
     return (
         <GlowBackground>
@@ -64,9 +98,19 @@ export default function Hero() {
                         letterSpacing: '-0.03em',
                     }}
                 >
-                    Yannick
+                    {displayedName}
+                    <span
+                        aria-hidden="true"
+                        className={`inline-block w-0.5 h-20 bg-indigo-400 ml-0.5 align-middle ${nameComplete ? 'hidden' : 'animate-[blink_1s_steps(1)_infinite]'}`}
+                    />
                     <br />
-                    <span style={{ color: 'rgba(255,255,255,0.35)' }}>Kahl</span>
+                    <span style={{ color: 'rgba(255,255,255,0.35)' }}>
+                        {displayedLastName}
+                        <span
+                            aria-hidden="true"
+                            className={`inline-block w-0.5 h-20 bg-indigo-400 ml-0.5 align-middle ${lastNameComplete ? 'hidden' : 'animate-[blink_1s_steps(1)_infinite]'}`}
+                        />
+                    </span>
                 </h1>
 
                 {/* typewriter subtitle */}
