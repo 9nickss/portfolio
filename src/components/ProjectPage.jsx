@@ -18,15 +18,15 @@ function ProjectPage() {
     )
 
     return (
-        <section className="px-16 py-32 max-w-6xl mx-auto">
+            <section className="px-4 md:px-8 lg:px-16 py-16 md:py-24 lg:py-32 max-w-6xl mx-auto">
 
             {/* retour */}
-            <Link to="/" className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-10">
+            <Link to="/" className="inline-flex items-center gap-2 text-xs md:text-sm text-gray-400 hover:text-white transition-colors mb-6 md:mb-10">
                 ← Back to projects
             </Link>
 
             {/* hero 2 colonnes */}
-            <div className="grid grid-cols-2 gap-16 items-start mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start mb-8 md:mb-12">
 
                 {/* gauche */}
                 <div>
@@ -35,8 +35,8 @@ function ProjectPage() {
                             ★ Featured
                         </span>
                     )}
-                    <h1 className="text-4xl font-bold text-white mb-4 leading-tight">{project.name}</h1>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-6">{project.description}</p>
+                    <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">{project.name}</h1>
+                    <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-6">{project.description}</p>
                     <a
                         href={project.link}
                         target="_blank"
@@ -80,7 +80,7 @@ function ProjectPage() {
             </ReactMarkdown>
 
             {/* meta */}
-            <div className="grid grid-cols-1 gap-3 w-48">
+            <div className="grid grid-cols-1 gap-3 w-full md:w-48">
                 <div className="bg-white/5 border border-white/10 rounded-xl p-4">
                     <p className="text-xs text-gray-600 mb-1">Language</p>
                     <p className="text-sm font-medium text-white">{project.stack}</p>

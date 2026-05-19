@@ -32,15 +32,15 @@ function Projects() {
 
     return (
         <GlowBackground>
-            <section id="projects" className="min-h-screen px-16 py-20">
-            <a href="#" className="flex flex-col items-center gap-1.5 mb-12 text-gray-700 hover:text-gray-400 transition-colors">
+            <section id="projects" className="min-h-screen px-4 md:px-8 lg:px-16 py-10 md:py-20">
+            <a href="#" className="flex flex-col items-center gap-1.5 mb-8 md:mb-12 text-gray-700 hover:text-gray-400 transition-colors">
                 <div className="w-px h-8 bg-gradient-to-t from-gray-700 to-transparent" />
                 <span className="text-xs tracking-widest uppercase">home</span>
             </a>
 
-            <h2 className="text-5xl font-bold mb-12">Projects</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-12">Projects</h2>
 
-            <div className="grid grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
 
                 {/* featured */}
                 <Link to={`/projects/${featured.slug}`} className="block">
@@ -82,7 +82,7 @@ function Projects() {
                 </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {under.map((projet) => (
                     <Link key={projet.name} to={`/projects/${projet.slug}`} className="block">
                         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/30 transition-colors">
@@ -101,7 +101,7 @@ function Projects() {
                 ))}
             </div>
 
-            <a href="#contact" onClick={scrollTo('contact')} className="flex flex-col items-center gap-1.5 mt-16 text-gray-700 hover:text-gray-400 transition-colors">
+            <a href="#contact" onClick={scrollTo('contact')} className="flex flex-col items-center gap-1.5 mt-8 md:mt-12 lg:mt-16 text-gray-700 hover:text-gray-400 transition-colors">
                 <span className="text-xs tracking-widest uppercase">contact</span>
                 <div className="w-px h-8 bg-gradient-to-b from-gray-700 to-transparent" />
             </a>

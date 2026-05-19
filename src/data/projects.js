@@ -183,9 +183,7 @@ Configurable FPS limiting for hardware compatibility`
             stack: "React / Vite / Tailwind",
             link: "https://github.com/9nickss/portfolio",
             featured: false,
-            longDescription: `A modern, responsive portfolio website showcasing professional projects and technical expertise. Built with cutting-edge web technologies to deliver a fast, interactive user experience.
-
-Overview
+            longDescription: `Overview
 
 This portfolio serves as a comprehensive showcase of software engineering projects, demonstrating proficiency across multiple programming languages and domains. The application features dynamic project filtering, detailed project descriptions, and seamless navigation through a collection of academic and personal projects.
 
