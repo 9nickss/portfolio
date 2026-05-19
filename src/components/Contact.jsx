@@ -131,6 +131,10 @@ function ContactForm() {
 function Contact() {
     return (
         <section id="contact" className="min-h-screen px-16 py-20">
+            <a href="#projects" className="flex flex-col items-center gap-1.5 mb-12 text-gray-700 hover:text-gray-400 transition-colors">
+                <div className="w-px h-8 bg-gradient-to-t from-gray-700 to-transparent" />
+                <span className="text-xs tracking-widest uppercase">projects</span>
+            </a>
             <h2 className="text-5xl font-bold mb-12">Contact</h2>
             <div className="grid grid-cols-2 gap-8">
                 <ContactLinks />

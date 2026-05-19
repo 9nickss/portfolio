@@ -1,85 +1,136 @@
 import { useEffect, useState } from 'react'
 
-function Hero() {
-    const fullName = 'Yannick Kahl'
-    const subtitles = [
-        'Second year EPITECH Nice student',
-        'C / C++ / Rust Developper',
-        'Getting into the world of cybersecurity',
-        'Have a look at my projects below',
-    ]
+const subtitles = [
+    'C / C++ / Rust Developer',
+    'Second year EPITECH Nice student',
+    'Getting into cybersecurity',
+    'Have a look at my projects ↓',
+]
 
-    const [displayedName, setDisplayedName] = useState('')
-
-    const [displayedSubtitle, setDisplayedSubtitle] = useState('')
-    const [subtitleIndex, setSubtitleIndex] = useState(0)
-    const [isDeletingSubtitle, setIsDeletingSubtitle] = useState(false)
+export default function Hero() {
+    const [displayed, setDisplayed] = useState('')
+    const [index, setIndex] = useState(0)
+    const [deleting, setDeleting] = useState(false)
 
     useEffect(() => {
-        if (displayedName === fullName) return
-
-        const id = setTimeout(() => {
-            setDisplayedName(fullName.slice(0, displayedName.length + 1))
-        }, 100)
-
-        return () => clearTimeout(id)
-    }, [displayedName, fullName])
-
-    useEffect(() => {
-        if (displayedName !== fullName) return
-
-        const current = subtitles[subtitleIndex]
-        const isFull = displayedSubtitle === current
-        const isEmpty = displayedSubtitle === ''
+        const current = subtitles[index]
+        const isFull = displayed === current
+        const isEmpty = displayed === ''
 
         let id
-
-        if (isFull && !isDeletingSubtitle) {
-            id = setTimeout(() => setIsDeletingSubtitle(true), 900)
-            return () => clearTimeout(id)
-        }
-
-        if (isEmpty && isDeletingSubtitle) {
+        if (isFull && !deleting) {
+            id = setTimeout(() => setDeleting(true), 1200)
+        } else if (isEmpty && deleting) {
             id = setTimeout(() => {
-                setIsDeletingSubtitle(false)
-                setSubtitleIndex((prev) => (prev + 1) % subtitles.length)
+                setDeleting(false)
+                setIndex(i => (i + 1) % subtitles.length)
             }, 300)
-            return () => clearTimeout(id)
+        } else {
+            id = setTimeout(() => {
+                setDisplayed(deleting
+                    ? current.slice(0, displayed.length - 1)
+                    : current.slice(0, displayed.length + 1)
+                )
+            }, deleting ? 45 : 70)
         }
-
-        const speed = isDeletingSubtitle ? 60 : 80
-
-        id = setTimeout(() => {
-            const next = isDeletingSubtitle
-                ? current.slice(0, displayedSubtitle.length - 1)
-                : current.slice(0, displayedSubtitle.length + 1)
-
-            setDisplayedSubtitle(next)
-        }, speed)
-
         return () => clearTimeout(id)
-    }, [displayedName, fullName, displayedSubtitle, subtitleIndex, isDeletingSubtitle, subtitles])
+    }, [displayed, index, deleting])
 
     return (
-        <section className="h-screen flex flex-col items-center justify-center text-center">
-            <h1 className="text-7xl font-bold">{displayedName}</h1>
+        <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
 
-            <p className="text-xl text-gray-400 mt-4 min-h-7">
-                {displayedSubtitle}
-                <span
-                    aria-hidden="true"
-                    className="ml-1 inline-block w-2 h-[1em] bg-white align-[-0.1em] animate-[blink_1s_steps(1)_infinite]"
-                />
-            </p>
+            {/* grid background */}
+            <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0"
+                style={{
+                    backgroundImage: `
+                        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
+                    `,
+                    backgroundSize: '60px 60px',
+                }}
+            />
 
-            <a
-                className="mt-8 px-6 py-3 border border-white rounded-full hover:bg-white hover:text-black transition-colors"
-                href="#projects"
-            >
-                Discover my projects
+            {/* radial glow */}
+            <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0"
+                style={{
+                    background: 'radial-gradient(ellipse 60% 50% at 50% 40%, rgba(99,102,241,0.12) 0%, transparent 70%)',
+                }}
+            />
+
+            {/* content */}
+            <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-4xl mx-auto">
+
+                {/* badge */}
+                <a
+                    href="https://github.com/9nickss"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 mb-10 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-gray-400 hover:border-white/20 hover:text-white transition-colors"
+                >
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
+                    Available for internship · Open to opportunities
+                    <span className="text-gray-600">→</span>
+                </a>
+
+                {/* headline */}
+                <h1
+                    className="font-bold tracking-tight leading-none mb-6"
+                    style={{
+                        fontSize: 'clamp(3.5rem, 9vw, 7.5rem)',
+                        letterSpacing: '-0.03em',
+                    }}
+                >
+                    Yannick
+                    <br />
+                    <span style={{ color: 'rgba(255,255,255,0.35)' }}>Kahl</span>
+                </h1>
+
+                {/* typewriter subtitle */}
+                <p
+                    className="text-base text-gray-500 mb-10 min-h-6 font-mono tracking-wide"
+                >
+                    {displayed}
+                    <span
+                        aria-hidden="true"
+                        className="inline-block w-0.5 h-4 bg-indigo-400 ml-0.5 align-middle animate-[blink_1s_steps(1)_infinite]"
+                    />
+                </p>
+
+                {/* CTAs */}
+                <div className="flex items-center gap-3 flex-wrap justify-center">
+                    <a
+                        href="#projects"
+                        className="px-6 py-2.5 rounded-full bg-white text-black text-sm font-medium hover:bg-gray-200 transition-colors"
+                    >
+                        See my projects
+                    </a>
+                    <a
+                        href="#contact"
+                        className="px-6 py-2.5 rounded-full border border-white/15 text-sm text-gray-300 hover:border-white/30 hover:text-white transition-colors"
+                    >
+                        Contact me
+                    </a>
+                </div>
+            </div>
+
+            {/* bottom fade */}
+            <div
+                aria-hidden="true"
+                className="pointer-events-none absolute bottom-0 inset-x-0 h-40"
+                style={{ background: 'linear-gradient(to bottom, transparent, #000)' }}
+            />
+
+            {/* scroll indicator */}
+            <a href="#projects"
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-gray-700 hover:text-gray-400 transition-colors">
+                <span className="text-xs tracking-widest uppercase">projects</span>
+                <div className="w-px h-8 bg-gradient-to-b from-gray-700 to-transparent" />
             </a>
+
         </section>
     )
 }
-
-export default Hero
