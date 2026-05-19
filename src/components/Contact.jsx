@@ -16,7 +16,7 @@ function SocialLink({ href, icon: Icon, label, subtitle }) {
             href={href}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-3 hover:bg-neutral-700 transition-colors"
+            className="flex items-center gap-3 bg-white/3 backdrop-blur-sm border border-white/10 rounded-xl p-3 hover:bg-neutral-700 transition-colors"
         >
             <Icon size={20} />
             <div>
@@ -51,7 +51,7 @@ function ContactLinks() {
     ]
 
     return (
-        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 flex flex-col gap-6">
+        <div className="bg-white/3 backdrop-blur-sm border border-white/10 rounded-xl p-8 flex flex-col gap-6">
             <span className="text-xs bg-indigo-950 text-indigo-400 border border-indigo-800 px-3 py-1 rounded-full w-fit">
                 available for internship / part-time
             </span>
@@ -106,10 +106,10 @@ function ContactForm() {
         error:   'Try again',
     }[status]
 
-    const inputClass = "bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-neutral-600"
+    const inputClass = "bg-white/3 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-neutral-600"
 
     return (
-        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 flex flex-col gap-4">
+        <div className="bg-white/3 backdrop-blur-sm border border-white/10 rounded-xl p-8 flex flex-col gap-4">
             <h3 className="text-xl font-bold">Send me a message!</h3>
             <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <input      name="from_name" type="text"  placeholder="Name"    required className={inputClass} />
