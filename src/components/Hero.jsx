@@ -19,6 +19,14 @@ export default function Hero() {
 
     const firstName = 'Yannick'
     const lastName = 'Kahl'
+    
+    const scrollTo = (id) => (e) => {
+        e.preventDefault()
+        const element = document.getElementById(id)
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
 
     useEffect(() => {
         // First, type out first name
@@ -120,13 +128,15 @@ export default function Hero() {
                 <div className="flex items-center gap-3 flex-wrap justify-center">
                     <a
                         href="#projects"
-                        className="px-6 py-2.5 rounded-full bg-white text-black text-sm font-medium hover:bg-gray-200 transition-colors"
+                        onClick={scrollTo('projects')}
+                        className="px-6 py-2.5 rounded-full bg-white text-black text-sm font-medium hover:bg-gray-200 transition-colors cursor-pointer"
                     >
                         See my projects
                     </a>
                     <a
                         href="#contact"
-                        className="px-6 py-2.5 rounded-full border border-white/15 text-sm text-gray-300 hover:border-white/30 hover:text-white transition-colors"
+                        onClick={scrollTo('contact')}
+                        className="px-6 py-2.5 rounded-full border border-white/15 text-sm text-gray-300 hover:border-white/30 hover:text-white transition-colors cursor-pointer"
                     >
                         Contact me
                     </a>

@@ -1,13 +1,24 @@
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { projects } from '../data/projects.js'
 import ReactMarkdown from 'react-markdown'
 
 function ProjectPage() {
     const { slug } = useParams()
+    const navigate = useNavigate()
+    
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [slug])
+    
+    const scrollTo = (id) => (e) => {
+        e.preventDefault()
+        navigate('/')
+        setTimeout(() => {
+            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+        }, 10)
+    }
+    
     const project = projects.find(p => p.slug === slug)
 
     if (!project) return (
@@ -21,9 +32,13 @@ function ProjectPage() {
             <section className="px-4 md:px-8 lg:px-16 py-16 md:py-24 lg:py-32 max-w-6xl mx-auto">
 
             {/* retour */}
-            <Link to="/" className="inline-flex items-center gap-2 text-xs md:text-sm text-gray-400 hover:text-white transition-colors mb-6 md:mb-10">
-                ← Back to projects
-            </Link>
+            <nav className="text-sm text-gray-400 mb-6">
+              <Link to="/" className="hover:text-white">Home</Link>
+              <span className="mx-2">/</span>
+              <a href="#projects" onClick={scrollTo('projects')} className="hover:text-white cursor-pointer">Projects</a>
+              <span className="mx-2">/</span>
+              <span className="text-white">{project.name}</span>
+            </nav>
 
             {/* hero 2 colonnes */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start mb-8 md:mb-12">
