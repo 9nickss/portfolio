@@ -99,17 +99,9 @@ export default function Hero() {
                     }}
                 >
                     {displayedName}
-                    <span
-                        aria-hidden="true"
-                        className={`inline-block w-0.5 h-20 bg-indigo-400 ml-0.5 align-middle ${nameComplete ? 'hidden' : 'animate-[blink_1s_steps(1)_infinite]'}`}
-                    />
                     <br />
                     <span style={{ color: 'rgba(255,255,255,0.35)' }}>
                         {displayedLastName}
-                        <span
-                            aria-hidden="true"
-                            className={`inline-block w-0.5 h-20 bg-indigo-400 ml-0.5 align-middle ${lastNameComplete ? 'hidden' : 'animate-[blink_1s_steps(1)_infinite]'}`}
-                        />
                     </span>
                 </h1>
 
