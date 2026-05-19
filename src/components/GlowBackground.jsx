@@ -48,7 +48,7 @@ export function GlowBackground({ children }) {
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0"
                 style={{
-                    background: `radial-gradient(ellipse 60% 50% at ${mousePos.x}% ${mousePos.y}%, rgba(99,102,241,0.12) 0%, transparent 35%)`,
+                    background: `radial-gradient(ellipse 35% 55% at ${mousePos.x}% ${mousePos.y}%, rgba(99,102,241,0.12) 0%, transparent 25%)`,
                 }}
             />
 
