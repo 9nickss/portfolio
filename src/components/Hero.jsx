@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { GlowBackground } from './GlowBackground'
 
 const subtitles = [
     'C / C++ / Rust Developer',
@@ -37,32 +38,11 @@ export default function Hero() {
     }, [displayed, index, deleting])
 
     return (
-        <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+        <GlowBackground>
+            <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
 
-            {/* grid background */}
-            <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0"
-                style={{
-                    backgroundImage: `
-                        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
-                    `,
-                    backgroundSize: '60px 60px',
-                }}
-            />
-
-            {/* radial glow */}
-            <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0"
-                style={{
-                    background: 'radial-gradient(ellipse 60% 50% at 50% 40%, rgba(99,102,241,0.12) 0%, transparent 70%)',
-                }}
-            />
-
-            {/* content */}
-            <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-4xl mx-auto">
+                {/* content */}
+                <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-4xl mx-auto">
 
                 {/* badge */}
                 <a
@@ -131,6 +111,7 @@ export default function Hero() {
                 <div className="w-px h-8 bg-gradient-to-b from-gray-700 to-transparent" />
             </a>
 
-        </section>
+            </section>
+        </GlowBackground>
     )
 }

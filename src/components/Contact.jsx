@@ -1,7 +1,9 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import { useState, useRef } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import emailjs from '@emailjs/browser'
+import { GlowBackground } from './GlowBackground'
 
 const EMAILJS_SERVICE_ID  = 'service_jx8q4vm'
 const EMAILJS_TEMPLATE_ID = 'template_kktcphg'
@@ -129,9 +131,31 @@ function ContactForm() {
 }
 
 function Contact() {
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    const scrollTo = (id) => async (e) => {
+        e.preventDefault()
+        if (location.pathname !== '/') {
+            navigate('/', { replace: false })
+            setTimeout(() => {
+                const element = document.getElementById(id)
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' })
+                }
+            }, 200)
+        } else {
+            const element = document.getElementById(id)
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' })
+            }
+        }
+    }
+
     return (
-        <section id="contact" className="min-h-screen px-16 py-20">
-            <a href="#projects" className="flex flex-col items-center gap-1.5 mb-12 text-gray-700 hover:text-gray-400 transition-colors">
+        <GlowBackground>
+            <section id="contact" className="min-h-screen px-16 py-20">
+            <a href="#projects" onClick={scrollTo('projects')} className="flex flex-col items-center gap-1.5 mb-12 text-gray-700 hover:text-gray-400 transition-colors">
                 <div className="w-px h-8 bg-gradient-to-t from-gray-700 to-transparent" />
                 <span className="text-xs tracking-widest uppercase">projects</span>
             </a>
@@ -140,7 +164,8 @@ function Contact() {
                 <ContactLinks />
                 <ContactForm />
             </div>
-        </section>
+            </section>
+        </GlowBackground>
     )
 }
 

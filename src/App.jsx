@@ -17,7 +17,7 @@ function Home() {
 
 function App() {
   return (
-    <main className="bg-black min-h-screen text-white">
+    <main className="min-h-screen text-white" style={{ background: '#0a0a0f' }}>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
