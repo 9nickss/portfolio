@@ -46,6 +46,7 @@ Actively maintained with planned features including polymorphic code generation,
 
 Project Overview
 
+EPITECH project but continued on my own.
 The raytracer reads scene descriptions from configuration files and renders high-quality 3D images in PPM format. It combines sophisticated mathematical algorithms with object-oriented design patterns to create a scalable, extensible rendering system.
 
 Core Features
