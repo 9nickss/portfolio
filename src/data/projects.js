@@ -180,7 +180,7 @@ Real-World Application
 
 This architecture mirrors production game engine design and middleware systems, making it valuable experience for systems programming, game development, and large-scale collaborative software projects.
 
-Collaborative Teams: 9nickss (Architecture Lead), HumanCentipede (Game Development), Gucci Gang (Graphics Implementation)`
+Teams we collaborated with (Everyone's GitHubs are in the ReadMe on the repository): HumanCentipede, Gucci Gang`
         },
         {
             slug: "myTeams",
