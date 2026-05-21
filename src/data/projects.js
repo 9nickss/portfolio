@@ -8,6 +8,7 @@ export const projects = [
             stack: "Rust",
             link: "https://github.com/9nickss/shellcode-runner",
             featured: true,
+            image: null,
             longDescription: `A sophisticated Rust-based shellcode execution framework for x86-64 Linux systems, featuring dynamic code execution with integrated encryption and key management. This project demonstrates expertise in low-level systems programming, cryptography, and modular architecture design.
 
 Key Technical Achievements
@@ -123,6 +124,7 @@ Technologies: C++17, libconfig++, Object-Oriented Design, Computer Graphics, Mat
             stack: "C++",
             link: "https://github.com/9nickss/myTeams",
             featured: false,
+            image: null,
             longDescription: `A full-stack C++ application that implements a team collaboration and messaging system, similar to Microsoft Teams or Slack. The project demonstrates proficiency in network programming, systems design, and real-time communication protocols.
 
 Overview
@@ -179,6 +181,7 @@ Custom binary serialization protocol`
             stack: "C",
             link: "https://github.com/9nickss/42sh",
             featured: false,
+            image: null,
             longDescription: `A fully-featured shell interpreter written in C that replicates core functionality of standard Unix shells (tcsh compatible). This project demonstrates deep understanding of Unix systems programming, process management, and command interpretation.
 
 Key Features
@@ -216,6 +219,7 @@ This project demonstrates proficiency in low-level system programming, lexical a
             stack: "C",
             link: "https://github.com/9nickss/wolf3D",
             featured: false,
+            image: null,
             longDescription: `A sophisticated, feature-rich 3D game engine built in C using SFML that implements classic Wolfenstein-style ray casting with modern game features. This project showcases advanced graphics programming, real-time rendering optimization, and complex game systems architecture.
 
 Key Features
@@ -264,6 +268,7 @@ Configurable FPS limiting for hardware compatibility`
             stack: "React / Vite / Tailwind",
             link: "https://github.com/9nickss/portfolio",
             featured: false,
+            image: null,
             longDescription: `Overview
 
 This portfolio serves as a comprehensive showcase of software engineering projects, demonstrating proficiency across multiple programming languages and domains. The application features dynamic project filtering, detailed project descriptions, and seamless navigation through a collection of academic and personal projects.
@@ -308,6 +313,7 @@ Component-based architecture`
             stack: "C",
             link: "https://github.com/9nickss/myWorld",
             featured: false,
+            image: null,
             longDescription: `A dynamic, interactive terrain editor built with C and SFML that allows users to sculpt and modify an isometric 3D landscape in real-time. This project demonstrates advanced graphics rendering, event handling, and game development fundamentals.
 
 Key Features
@@ -340,6 +346,7 @@ C, SFML (Graphics, Audio, Input), Mathematics (trigonometry for isometric projec
             stack: "JS",
             link: "https://github.com/moustiIIon/G-Bot",
             featured: false,
+            image: null,
             longDescription: `A feature-rich Discord bot built with Discord.js that combines entertainment utilities, API integration, and guild management. Designed for community engagement and member interaction with both audio playback and data fetching capabilities.
 
 Key Features

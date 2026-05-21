@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export function GlowBackground({ children }) {
+export function GlowBackground({ children, glowWidthPercent = 35, glowHeightPercent = 55, gridGlowWidthPercent = 30, gridGlowHeightPercent = 35 }) {
     const [mousePos, setMousePos] = useState({ x: 50, y: 40 })
 
     const handleMouseMove = (e) => {
@@ -39,7 +39,7 @@ export function GlowBackground({ children }) {
                     `,
                     backgroundSize: '60px 60px',
                     filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.3)) blur(0.5px)',
-                    maskImage: `radial-gradient(ellipse 30% 35% at ${mousePos.x}% ${mousePos.y}%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 35%)`,
+                    maskImage: `radial-gradient(ellipse ${gridGlowWidthPercent}% ${gridGlowHeightPercent}% at ${mousePos.x}% ${mousePos.y}%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 35%)`,
                 }}
             />
 
@@ -48,7 +48,7 @@ export function GlowBackground({ children }) {
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0"
                 style={{
-                    background: `radial-gradient(ellipse 35% 55% at ${mousePos.x}% ${mousePos.y}%, rgba(99,102,241,0.12) 0%, transparent 25%)`,
+                    background: `radial-gradient(ellipse ${glowWidthPercent}% ${glowHeightPercent}% at ${mousePos.x}% ${mousePos.y}%, rgba(99,102,241,0.12) 0%, transparent 25%)`,
                 }}
             />
 

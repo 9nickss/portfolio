@@ -115,7 +115,7 @@ export default function Hero() {
 
                 {/* typewriter subtitle */}
                 <p
-                    className="text-base text-gray-500 mb-10 min-h-6 font-mono tracking-wide"
+                    className="text-base text-gray-500 h-6 font-mono tracking-wide"
                 >
                     {displayed}
                     <span
@@ -125,7 +125,7 @@ export default function Hero() {
                 </p>
 
                 {/* CTAs */}
-                <div className="flex items-center gap-3 flex-wrap justify-center">
+                <div className="flex items-center gap-3 flex-wrap justify-center mt-10">
                     <a
                         href="#projects"
                         onClick={scrollTo('projects')}

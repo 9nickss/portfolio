@@ -8,8 +8,6 @@ function Projects() {
     const location = useLocation()
     const featured = projects.find(p => p.featured)
     const other = projects.filter(p => !p.featured)
-    const column = other.slice(0, 3)
-    const under = other.slice(3)
 
     const scrollTo = (id) => async (e) => {
         e.preventDefault()
@@ -31,7 +29,7 @@ function Projects() {
     }
 
     return (
-        <GlowBackground>
+        <GlowBackground glowWidthPercent={35} glowHeightPercent={30} gridGlowWidthPercent={30} gridGlowHeightPercent={30}>
             <section id="projects" className="min-h-screen px-4 md:px-8 lg:px-16 py-10 md:py-20">
             <a href="#" className="flex flex-col items-center gap-1.5 mb-8 md:mb-12 text-gray-700 hover:text-gray-400 transition-colors">
                 <div className="w-px h-8 bg-gradient-to-t from-gray-700 to-transparent" />
@@ -40,65 +38,66 @@ function Projects() {
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-12">Projects</h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-
-                {/* featured */}
-                <Link to={`/projects/${featured.slug}`} className="block">
-                    <div className="bg-white/3 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col justify-end h-full hover:border-white/30 transition-colors">
-                        <span className="text-xs bg-white text-black px-3 py-1 rounded-full w-fit mb-auto">
-                            Featured
-                        </span>
-                        <h3 className="text-xl font-bold text-white mt-4">{featured.name}</h3>
-                        <p className="text-gray-500 text-sm mt-2">{featured.description}</p>
-                        <div className="flex items-center gap-3 mt-4">
-                            <span className="text-xs border border-neutral-700 px-3 py-1 rounded-full text-gray-400">
-                                {featured.stack}
-                            </span>
-                            <a href={featured.link} target="_blank" className="text-xs text-gray-400 hover:text-white" onClick={e => e.stopPropagation()}>
-                                GitHub →
-                            </a>
-                        </div>
-                    </div>
-                </Link>
-
-                {/* other */}
-                <div className="flex flex-col gap-4">
-                    {column.map((projet) => (
-                        <Link key={projet.name} to={`/projects/${projet.slug}`} className="block">
-                            <div className="bg-white/3 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/30 transition-colors">
-                                <h3 className="text-lg font-bold text-white">{projet.name}</h3>
-                                <p className="text-gray-500 text-sm mt-2">{projet.description}</p>
-                                <div className="flex items-center gap-3 mt-4">
-                                    <span className="text-xs border border-neutral-700 px-3 py-1 rounded-full text-gray-400">
-                                        {projet.stack}
+            <div className="space-y-8">
+                {/* Featured */}
+                <div className="flex justify-center">
+                    <Link to={`/projects/${featured.slug}`} className="block w-full md:w-1/2">
+                        <div className="bg-white/3 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-colors">
+                            <div className="aspect-video bg-white/5 flex items-center justify-center flex-shrink-0">
+                                {featured.image ? (
+                                    <img src={featured.image} alt={featured.name} className="w-full h-full object-cover" />
+                                ) : (
+                                    <span className="text-gray-700 text-xs text-center p-2">No image</span>
+                                )}
+                            </div>
+                            <div className="p-4">
+                                <span className="text-xs bg-white text-black px-3 py-1 rounded-full">Featured</span>
+                                <h3 className="text-lg font-bold text-white mt-2">{featured.name}</h3>
+                                <p className="text-gray-500 text-xs mt-1 line-clamp-2">{featured.description}</p>
+                                <div className="flex items-center justify-between mt-3">
+                                    <span className="text-xs border border-neutral-700 px-2 py-1 rounded-full text-gray-400">
+                                        {featured.stack}
                                     </span>
-                                    <a href={projet.link} target="_blank" className="text-xs text-gray-400 hover:text-white" onClick={e => e.stopPropagation()}>
+                                    <a href={featured.link} target="_blank" rel="noreferrer" className="text-xs text-gray-400 hover:text-white" onClick={e => e.stopPropagation()}>
                                         GitHub →
                                     </a>
+                                </div>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+
+                {/* Other projects */}
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {other.map((projet) => (
+                        <Link key={projet.name} to={`/projects/${projet.slug}`} className="block">
+                            <div className="bg-white/3 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-colors h-full flex flex-col">
+                                {/* Image */}
+                                <div className="aspect-square bg-white/5 flex items-center justify-center relative flex-shrink-0">
+                                    {projet.image ? (
+                                        <img src={projet.image} alt={projet.name} className="w-full h-full object-cover" />
+                                    ) : (
+                                        <span className="text-gray-700 text-xs text-center p-2">No image</span>
+                                    )}
+                                </div>
+                                
+                                {/* Info */}
+                                <div className="p-3 flex-grow flex flex-col">
+                                    <h3 className="text-sm font-bold text-white">{projet.name}</h3>
+                                    <p className="text-gray-500 text-xs mt-1 line-clamp-2 flex-grow">{projet.description}</p>
+                                    <div className="flex items-center justify-between mt-3 pt-2 border-t border-white/5">
+                                        <span className="text-xs border border-neutral-700 px-2 py-1 rounded-full text-gray-400">
+                                            {projet.stack}
+                                        </span>
+                                        <a href={projet.link} target="_blank" rel="noreferrer" className="text-xs text-gray-400 hover:text-white" onClick={e => e.stopPropagation()}>
+                                            GitHub →
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </Link>
                     ))}
                 </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {under.map((projet) => (
-                    <Link key={projet.name} to={`/projects/${projet.slug}`} className="block">
-                        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/30 transition-colors">
-                            <h3 className="text-lg font-bold text-white">{projet.name}</h3>
-                            <p className="text-gray-500 text-sm mt-2">{projet.description}</p>
-                            <div className="flex items-center gap-3 mt-4">
-                                <span className="text-xs border border-neutral-700 px-3 py-1 rounded-full text-gray-400">
-                                    {projet.stack}
-                                </span>
-                                <a href={projet.link} target="_blank" className="text-xs text-gray-400 hover:text-white" onClick={e => e.stopPropagation()}>
-                                    GitHub →
-                                </a>
-                            </div>
-                        </div>
-                    </Link>
-                ))}
             </div>
 
             <a href="#contact" onClick={scrollTo('contact')} className="flex flex-col items-center gap-1.5 mt-8 md:mt-12 lg:mt-16 text-gray-700 hover:text-gray-400 transition-colors">
