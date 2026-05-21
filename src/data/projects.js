@@ -41,7 +41,7 @@ Actively maintained with planned features including polymorphic code generation,
             description: "A sophisticated C++ ray tracing engine that renders 3D scenes with realistic lighting, shadows, and geometric transformations.",
             stack: "C++",
             link: "https://github.com/9nickss/raytracer",
-            featured: true,
+            featured: false,
             longDescription: `A comprehensive C++ ray tracing engine designed for realistic 3D image synthesis. This EPITECH OOP project demonstrates advanced computer graphics techniques, mathematical precision, and professional software architecture through the implementation of a complete ray tracing pipeline.
 
 Project Overview
