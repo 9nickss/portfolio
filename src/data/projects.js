@@ -36,6 +36,83 @@ Project Status
 Actively maintained with planned features including polymorphic code generation, junk code injection, and advanced evasion techniques.`
         },
         {
+             slug: "raytracer",
+            name: "raytracer",
+            description: "A sophisticated C++ ray tracing engine that renders 3D scenes with realistic lighting, shadows, and geometric transformations.",
+            stack: "C++",
+            link: "https://github.com/9nickss/raytracer",
+            featured: true,
+            longDescription: `A comprehensive C++ ray tracing engine designed for realistic 3D image synthesis. This EPITECH OOP project demonstrates advanced computer graphics techniques, mathematical precision, and professional software architecture through the implementation of a complete ray tracing pipeline.
+
+Project Overview
+
+The raytracer reads scene descriptions from configuration files and renders high-quality 3D images in PPM format. It combines sophisticated mathematical algorithms with object-oriented design patterns to create a scalable, extensible rendering system.
+
+Core Features
+
+Primitive Shapes:
+• Spheres with smooth shading and accurate intersections
+• Infinite planes for spatial boundaries and backgrounds
+• Cylindrical surfaces with full 3D transformations
+• Conical surfaces with configurable dimensions
+• Limited cylinders with capped ends for finite geometry
+• Limited cones with capped bases
+
+Advanced Lighting System:
+• Ambient lighting for global scene illumination
+• Directional lights for sun-like parallel rays
+• Point lights for omnidirectional illumination from specific positions
+• Colored lights with RGB awareness for realistic color mixing
+• Per-surface normal calculations for accurate shading
+
+3D Transformations & Geometry:
+• Full 3D rotations around arbitrary axes
+• Non-uniform scaling of primitives
+• Geometric shearing transformations
+• Flexible camera control with arbitrary positioning and orientation
+
+Rendering Capabilities:
+• Accurate ray-primitive intersection calculations using mathematical formulas
+• Recursive ray tracing for complex lighting scenarios
+• Color blending based on lighting and surface properties
+• PPM (Portable Pixmap) format output for universal compatibility
+
+Technical Architecture
+
+Object-Oriented Design:
+• Factory patterns for object creation
+• Modular component system (Camera, Lights, Primitives, Scene)
+• Extensible architecture for adding new primitive types
+
+Mathematical Foundation:
+• Quadratic equation solving for sphere intersections
+• Linear plane-ray intersection calculations
+• Parametric surface equations for cylinders and cones
+• Vector mathematics for normals and transformations
+
+Configuration System:
+• libconfig++ format for flexible scene definitions
+• Support for multiple pre-configured example scenes (gallery, museum, backrooms, sci-fi corridor, plateau)
+• Normalized color values (0.0 to 1.0) for precise color control
+
+Build & Performance:
+• C++17 compatible codebase with modern compiler optimizations
+• -O2 compiler optimization for fast rendering
+• Clang++ compilation for enhanced performance
+• Makefile-based build system with clean/rebuild targets
+
+Key Technical Achievements:
+• Complex geometric calculations for multiple primitive types with proper intersection detection
+• Sophisticated lighting model combining ambient, diffuse, and specular components
+• Efficient memory management and ray termination strategies
+• Professional project organization with clear separation of concerns
+
+Project Structure:
+Modular codebase organized into Camera, Math, Primitives, Lights, Factory, Scene, Rotation, and Transformations components, demonstrating enterprise-level software engineering practices.
+
+Technologies: C++17, libconfig++, Object-Oriented Design, Computer Graphics, Mathematical Algorithms`
+        },
+        {
             slug: "myTeams",
             name: "myTeams",
             description: "EPITECH tek2 project -> CLI chatroom based on Microsoft Teams coded in C++",

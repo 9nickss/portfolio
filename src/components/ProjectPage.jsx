@@ -18,7 +18,7 @@ function ProjectPage() {
             document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
         }, 10)
     }
-    
+
     const project = projects.find(p => p.slug === slug)
 
     if (!project) return (
