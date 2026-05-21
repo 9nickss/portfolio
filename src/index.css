@@ -30,6 +30,25 @@ body {
     border-radius: 3px;
 }
 
+/* Scrollable project page */
+.project-page {
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.project-page::-webkit-scrollbar {
+    width: 6px;
+}
+
+.project-page::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.project-page::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
 @keyframes blink {
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }

@@ -1,4 +1,5 @@
 import raytracerImage from '../assets/images/raytracer.png'
+import arcadeImage from '../assets/images/arcade.png'
 
 export const projects = [
         {
@@ -116,6 +117,70 @@ Project Structure:
 Modular codebase organized into Camera, Math, Primitives, Lights, Factory, Scene, Rotation, and Transformations components, demonstrating enterprise-level software engineering practices.
 
 Technologies: C++17, libconfig++, Object-Oriented Design, Computer Graphics, Mathematical Algorithms`
+        },
+        {
+            slug: "arcade",
+            name: "arcade",
+            description: "A modular arcade gaming platform with plugin-based architecture supporting multiple games and graphics rendering engines.",
+            stack: "C++",
+            link: "https://github.com/9nickss/arcade",
+            featured: false,
+            image: arcadeImage,
+            longDescription: `A sophisticated C++ arcade gaming platform built with a plugin-based architecture that exemplifies the Open/Closed Principle. This EPITECH collaborative project demonstrates professional software engineering through a modular system where games and graphics libraries are completely decoupled and interchangeable.
+
+Project Overview
+
+Arcade is a multi-game, multi-graphics library platform that allows seamless switching between different rendering engines and games without modifying the core system. The architecture uses a minimal but elegant interface contract that enables teams to work independently on games and display modules while maintaining full compatibility.
+
+Core Architecture
+
+Plugin System Design:
+• IDisplayModule Interface: Standardized graphics rendering API with init(), clear(), render(), display(), pollEvent(), and close() methods
+• IGameModule Interface: Standardized game logic API with init(), handleInput(), update(), getRenderData(), getScore(), isGameOver(), and reset() methods
+• Common Types Layer: Shared data structures (RenderData, Key enum, Color enum) enabling seamless inter-module communication
+• Minimal Coupling: Decoupled components minimize dependencies, maximizing extensibility and team independence
+
+Graphics Rendering Engines (3 implementations)
+
+NCurses Display Module: Terminal-based rendering for lightweight, cross-platform CLI gaming
+SDL2 Display Module: Cross-platform graphics library with hardware acceleration and advanced rendering
+Qt5 Display Module: Modern GUI framework for sophisticated graphical interface
+
+Game Implementations
+
+Pacman: Classic maze navigation game with ghost AI and strategic pathfinding
+Space Invaders: Arcade shoot-em-up with wave-based enemy patterns and progressive difficulty
+
+Technical Achievements
+
+Software Design Patterns:
+• Minimal Common Interface Contract: Core interfaces support maximum extensibility
+• Plug-and-Play Architecture: Games and graphics modules are dynamically loadable
+• Factory Pattern: Modular object creation and management
+
+Language & Tools:
+• C++20 with modern compiler optimizations
+• CMake build system with dynamic library loading
+• Collaborative development workflow across multiple teams
+
+Build & Deployment:
+• Shared library architecture for plug-and-play modules
+• Consistent build process across different graphics implementations
+• Runtime library loading and interface resolution
+
+Key Design Philosophy
+
+The project exemplifies professional software engineering by minimizing the "shared" codebase while maximizing extensibility. Each development team can:
+• Create unique games with independent feature sets
+• Implement specialized graphics engines with library-specific optimizations
+• Work in complete isolation without core system modifications
+• Extend functionality through well-defined interfaces
+
+Real-World Application
+
+This architecture mirrors production game engine design and middleware systems, making it valuable experience for systems programming, game development, and large-scale collaborative software projects.
+
+Collaborative Teams: 9nickss (Architecture Lead), HumanCentipede (Game Development), Gucci Gang (Graphics Implementation)`
         },
         {
             slug: "myTeams",

@@ -29,7 +29,7 @@ function ProjectPage() {
     )
 
     return (
-            <section className="px-4 md:px-8 lg:px-16 py-16 md:py-24 lg:py-32 max-w-6xl mx-auto">
+            <section className="project-page px-4 md:px-8 lg:px-16 py-16 md:py-24 lg:py-32 max-w-6xl mx-auto">
 
             {/* retour */}
             <nav className="text-sm text-gray-400 mb-6">
