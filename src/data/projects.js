@@ -1,3 +1,5 @@
+import raytracerImage from '../assets/images/raytracer.png'
+
 export const projects = [
         {
             slug: "shellcode-runner",
@@ -42,6 +44,7 @@ Actively maintained with planned features including polymorphic code generation,
             stack: "C++",
             link: "https://github.com/9nickss/raytracer",
             featured: false,
+            image: raytracerImage,
             longDescription: `A comprehensive C++ ray tracing engine designed for realistic 3D image synthesis. This EPITECH OOP project demonstrates advanced computer graphics techniques, mathematical precision, and professional software architecture through the implementation of a complete ray tracing pipeline.
 
 Project Overview
