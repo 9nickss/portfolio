@@ -58,7 +58,7 @@ function ProjectPage() {
                         rel="noreferrer"
                         className="inline-flex items-center gap-2 text-sm border border-white/20 rounded-full px-5 py-2 text-white hover:bg-white hover:text-black transition-colors"
                     >
-                        View on GitHub ↗
+                        View on GitHub
                     </a>
                 </div>
 
