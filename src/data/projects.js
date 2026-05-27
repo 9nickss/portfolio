@@ -1,5 +1,10 @@
 import raytracerImage from '../assets/images/raytracer.png'
 import arcadeImage from '../assets/images/arcade.png'
+import shellcodeImage from '../assets/images/shellcode_runner.png'
+import myWorldImage from '../assets/images/myWorld.png'
+import GBotImage from '../assets/images/bot.png'
+import portfolioImage from '../assets/images/portfolio.png'
+import wolfImage from '../assets/images/wolf3d.png'
 
 export const projects = [
         {
@@ -9,7 +14,7 @@ export const projects = [
             stack: "Rust",
             link: "https://github.com/9nickss/shellcode-runner",
             featured: true,
-            image: null,
+            image: shellcodeImage,
             longDescription: `A sophisticated Rust-based shellcode execution framework for x86-64 Linux systems, featuring dynamic code execution with integrated encryption and key management. This project demonstrates expertise in low-level systems programming, cryptography, and modular architecture design.
 
 Key Technical Achievements
@@ -284,7 +289,7 @@ This project demonstrates proficiency in low-level system programming, lexical a
             stack: "C",
             link: "https://github.com/9nickss/wolf3D",
             featured: false,
-            image: null,
+            image: wolfImage,
             longDescription: `A sophisticated, feature-rich 3D game engine built in C using SFML that implements classic Wolfenstein-style ray casting with modern game features. This project showcases advanced graphics programming, real-time rendering optimization, and complex game systems architecture.
 
 Key Features
@@ -322,7 +327,7 @@ C, SFML (Graphics, Audio, Input, System), Ray Casting Algorithm, POSIX system ca
 Performance Highlights
 
 Real-time 60 FPS rendering capability
-Optimized ray tracing with early termination
+Optimized ray casting with early termination
 Efficient sprite and particle rendering with depth sorting
 Configurable FPS limiting for hardware compatibility`
         },
@@ -333,7 +338,7 @@ Configurable FPS limiting for hardware compatibility`
             stack: "React / Vite / Tailwind",
             link: "https://github.com/9nickss/portfolio",
             featured: false,
-            image: null,
+            image: portfolioImage,
             longDescription: `Overview
 
 This portfolio serves as a comprehensive showcase of software engineering projects, demonstrating proficiency across multiple programming languages and domains. The application features dynamic project filtering, detailed project descriptions, and seamless navigation through a collection of academic and personal projects.
@@ -378,7 +383,7 @@ Component-based architecture`
             stack: "C",
             link: "https://github.com/9nickss/myWorld",
             featured: false,
-            image: null,
+            image: myWorldImage,
             longDescription: `A dynamic, interactive terrain editor built with C and SFML that allows users to sculpt and modify an isometric 3D landscape in real-time. This project demonstrates advanced graphics rendering, event handling, and game development fundamentals.
 
 Key Features
@@ -411,7 +416,7 @@ C, SFML (Graphics, Audio, Input), Mathematics (trigonometry for isometric projec
             stack: "JS",
             link: "https://github.com/moustiIIon/G-Bot",
             featured: false,
-            image: null,
+            image: GBotImage,
             longDescription: `A feature-rich Discord bot built with Discord.js that combines entertainment utilities, API integration, and guild management. Designed for community engagement and member interaction with both audio playback and data fetching capabilities.
 
 Key Features
