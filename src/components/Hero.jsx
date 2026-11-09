@@ -3,7 +3,7 @@ import { GlowBackground } from './GlowBackground'
 
 const subtitles = [
     'C / C++ / Rust Developer',
-    'Second year EPITECH Nice student',
+    'Third year EPITECH Nice student',
     'Getting into cybersecurity',
     'Have a look at my projects ↓',
 ]
