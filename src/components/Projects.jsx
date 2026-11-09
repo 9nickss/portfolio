@@ -6,8 +6,8 @@ import { GlowBackground } from './GlowBackground'
 function Projects() {
     const navigate = useNavigate()
     const location = useLocation()
-    const featured = projects.find(p => p.featured)
-    const other = projects.filter(p => !p.featured)
+    const featured = projects.find(p => p.featured) || projects[0]
+    const other = projects.filter(p => p !== featured)
 
     const scrollTo = (id) => async (e) => {
         e.preventDefault()
