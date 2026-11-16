@@ -77,7 +77,7 @@
     "link": "https://github.com/9nickss/portfolio",
     "featured": false,
     "image": "https://raw.githubusercontent.com/9nickss/portfolio/main/src/assets/images/portfolio.png",
-    "longDescription": "Portfolio made with React / Vite / TailWind\n\n![](src/assets/images/portfolio.png)"
+    "longDescription": "Portfolio made with React / Vite / TailWind for my projects\n\n![](src/assets/images/portfolio.png)"
   },
   {
     "slug": "raytracer",
